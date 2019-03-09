@@ -50,9 +50,6 @@ const makeTableFromData = () => {
             + "<td>" + res[i].lastname + "</td>"
             + "<td>" + res[i].email + "</td>"
             + "<td>" + res[i].gender + "</td>"
-            // for (j in res[i]) {
-            //     txt += "<td>"+ res[i].firstsname + "</td>"
-            // }
             txt += "</tr>"
         }
         txt += "</tbody></table>"
