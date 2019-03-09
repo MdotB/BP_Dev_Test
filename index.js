@@ -39,27 +39,27 @@ const makeTableFromData = () => {
 
     let txt = ""
 
-    fetch(endPoint)
-    .then(res => res.json())
-    .then(res => {
+    fetch(endPoint) // Fetch data
+    .then(res => res.json()) // convert to js object
+    .then(res => { // build table and inject dynamic data from endpoint
         txt += "<table border='1'>"
           + "<thead>" + "<tr><th>First Name</th><th>Last Name</th>"
           + "<th>Email</th><th>Gender</th></tr></thead><tbody>"
         for (let i = 0; i < res.length; i++) {
-            txt += "<tr><td>"+ res[i].firstname + "</td>"
+            txt += "<tr>" // build
+            + "<td>" + res[i].firstname + "</td>"
             + "<td>" + res[i].lastname + "</td>"
             + "<td>" + res[i].email + "</td>"
             + "<td>" + res[i].gender + "</td>"
             txt += "</tr>"
         }
         txt += "</tbody></table>"
-        document.getElementById("table-wrapper").innerHTML = txt
-       
-        console.log(txt)
-        return res
+        
+        document.getElementById("table-wrapper").innerHTML = txt // render table 
     })
     .catch(err => console.log(err))
 }
 
 makeTableFromData()
+
 // END TASK 3
