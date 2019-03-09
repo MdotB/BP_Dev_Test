@@ -44,15 +44,23 @@ const makeTableFromData = () => {
     .then(res => {
         txt += "<table border='1'>"
           + "<thead>" + "<tr><th>First Name</th><th>Last Name</th>"
-          + "<th>Email</th><th>Gender</th></tr></thead>"
-        // for (i in res) {
-        //     txt += 
-        // }
+          + "<th>Email</th><th>Gender</th></tr></thead><tbody>"
+        for (let i = 0; i < res.length; i++) {
+            txt += "<tr><td>"+ res[i].firstname + "</td>"
+            + "<td>" + res[i].lastname + "</td>"
+            + "<td>" + res[i].email + "</td>"
+            + "<td>" + res[i].gender + "</td>"
+            // for (j in res[i]) {
+            //     txt += "<td>"+ res[i].firstsname + "</td>"
+            // }
+            txt += "</tr>"
+        }
+        txt += "</tbody></table>"
+        document.getElementById("table-wrapper").innerHTML = txt
+       
+        console.log(txt)
         return res
     })
-    .then(data => data.forEach(d => {
-        console.log(d)
-    }))
     .catch(err => console.log(err))
 }
 
