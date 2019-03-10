@@ -8,8 +8,53 @@
     <link rel="stylesheet" href="./index.css">
 </head>
 <body>
-    <h1>Check Out My JS Table</h1>
-  <div id="table-wrapper"></div>
+    <h1>Part 1 - Developer Test</h1>
+    <div class="wrapper">
+      <div class="task-wrapper">
+        <h2>Task 1 - Randomize a set of numbers</h2>
+        <a href="https://github.com/MdotB/BP_Dev_Test/blob/master/index.js">View code</a>
+        <pre>
+            <code>
+                const randomizeArray = (arr) => {
+
+                  let counter = arr.length;
+                  let randomIndex;
+                  let temp;
+              
+                  while (counter > 0) {
+                      counter--
+                      randomIndex = Math.floor(Math.random() * counter)
+                      temp = arr[counter]
+                      arr[counter] = arr[randomIndex]
+                      arr[randomIndex] = temp
+                  }
+              
+                  return arr
+              }
+              
+              const numberSet = [22, 14, 3, 4, 37, 6, 7, 81, 9, 10]
+              console.log(randomizeArray(numberSet)) 
+            </code>
+          </pre>
+      </div>
+      <div class="task-wrapper">
+        <h2>Task 2 - Finding the mean in a set of numbers</h2>
+        <a href="https://github.com/MdotB/BP_Dev_Test/blob/master/index.js">View code</a>
+        <pre>
+          <code>
+              const arrayMean = (arr) => arr.reduce((a, b) => a + b, 0) / arr.length
+              console.log(arrayMean(numberSet))
+          </code>
+        </pre>
+        <a href=""></a>
+      </div>
+      <div class="task-wrapper">
+        <h2>Task 3 - Populating a table with externally fetched data</h2>
+        <a href="https://github.com/MdotB/BP_Dev_Test/blob/master/index.js">View code</a>
+        <div id="table-wrapper"></div>
+      </div>
+    </div>
+  
   <script src="./index.js"></script>
 </body>
 </html>
